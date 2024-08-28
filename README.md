@@ -37,4 +37,61 @@ dependency `com.unity.mobile.notifications-2.3.2` and `com.cysharp.unitask-2.5.5
 ## Use
 
 - Add define symbol `VIRTUESKY_NOTIFICATION`
-- 
+- Create `NotificationChanel` (via `Create` > `Unity-Common` > `Notification Chanel`)
+
+
+![Unity_Sc8gP1veiY](https://github.com/user-attachments/assets/62050ab1-36a2-40c2-af80-3b4898bde874)
+
+
+![Screenshot 2024-08-28 135421](https://github.com/user-attachments/assets/0e4688ac-b718-4f2a-b8bb-9875ba628953)
+
+- `Identifier`
+- `Minute` (after t minute notification will be sent)
+- `Repeat` (is it repeatable or not)
+- `Pig Picture` (only android)
+- `Name Picture` (name pig picture notification)
+`Note: File big picture must be place in folder StreamingAsset, Name Picture must contains file extension ex .jpg`
+
+![mJSRu](https://github.com/user-attachments/assets/d50145c2-1d6f-4d25-9ec3-424211eff43c)
+
+- `Override Icon`
+- `Small Icon` (custom small icon)
+- `Large Icon` (custom large icon)
+
+- `NotificationPrepare`
+Attach NotificationPrepare to scene to prepare notification android bigpicture, RequestUserPermission android and schedule
+
+![Screenshot 2024-08-28 140819](https://github.com/user-attachments/assets/8a905a11-7b17-4d36-bea5-61fd9f412484)
+
+- Send notification
+
+```csharp
+  public NotificationChanel notificationChanel;
+
+  private void Start()
+  {
+    notificationChanel.Send();
+  }
+```
+- Schedule notification
+
+```csharp
+  public NotificationChanel notificationChanel;
+
+  private void Start()
+  {
+    notificationChanel.Schedule();
+  }
+```
+- Cancel All Scheduled
+
+```csharp
+  public NotificationChanel notificationChanel;
+
+  private void Start()
+  {
+    notificationChanel.CancelAllScheduled();
+  }
+```
+
+
